@@ -1,0 +1,4 @@
+
+brew install python-tk
+
+brew install portaudio
