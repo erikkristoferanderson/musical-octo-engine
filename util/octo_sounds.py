@@ -14,8 +14,8 @@ def play_a_note(note):
     player.play_wave(synthesizer.generate_constant_wave(note, 1.0))
 
 
-def play_notes(notes_to_play):
-    player.play_wave(synthesizer.generate_chord(notes_to_play, 1.0))
+def play_notes(notes_to_play, duration=1.0):
+    player.play_wave(synthesizer.generate_chord(notes_to_play, duration))
 
 
 def go(var1, var2, var3, var4, var5, var6, var7, var8):
@@ -43,8 +43,11 @@ def go(var1, var2, var3, var4, var5, var6, var7, var8):
     zipped_notes_and_vals = zip(notes, vals)
 
     notes_to_play = [note for note, val in zipped_notes_and_vals if val]
-    print(notes_to_play)
+    duration = 1.5 * len(notes_to_play) / 8.0
+    if duration < 0.5:
+        duration = 0.5
+    print(notes_to_play, duration)
     if len(notes_to_play) > 0:
-        play_notes(notes_to_play)
+        play_notes(notes_to_play, duration)
     else:
         print("Zounds, Batman!")
