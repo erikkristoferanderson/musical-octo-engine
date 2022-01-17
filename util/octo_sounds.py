@@ -40,17 +40,11 @@ def go(var1, var2, var3, var4, var5, var6, var7, var8):
     else:
         notes = ["C3", "E3", "G3", "C4", "D4", "E4", "G4", "A4"]
 
-
     zipped_notes_and_vals = zip(notes, vals)
 
     notes_to_play = [note for note, val in zipped_notes_and_vals if val]
     print(notes_to_play)
-    play_notes(notes_to_play)
-    
-    # for val, note in zip(vals, notes):
-    #     if val:
-    #         play_a_note(note)
-    #
-    # if val_1 and val_5:
-    #     play_a_sound()
-
+    if len(notes_to_play) > 0:
+        play_notes(notes_to_play)
+    else:
+        print("Zounds, Batman!")
