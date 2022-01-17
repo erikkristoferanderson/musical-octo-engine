@@ -5,7 +5,7 @@ from util import octo_sounds
 def main():
     def start():
         octo_sounds.go(var1, var2, var3, var4, var5, var6, var7, var8)
-    print("hello 1")
+    print("Welcome to musical octo engine")
     master = tkinter.Tk()
     var1 = tkinter.IntVar()
     tkinter.Checkbutton(master, text="1", variable=var1).grid(row=0, column=0, sticky=tkinter.W)
